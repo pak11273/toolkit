@@ -10,89 +10,76 @@
 
         1. yarn add -D tailwindcss postcss-preset-env
         2. Configure scripts:
-        ```js
-                "scripts": {
-                        "dev": "next",
-                        "build": "next build",
-                        "start": "next start",
-                        "export": "next build && next export"
-                 },
-        ```
+
+        "scripts": {
+                "dev": "next",
+                "build": "next build",
+                "start": "next start",
+                "export": "next build && next export"
+        },
 
 5.  In the root directory: `npx tailwind init`
 
 6.  Add post.config.js file to the root directory:
 
-            ```js
-                    module.exports = {
-                        plugins: [
-                            "tailwindcss",
-                            "postcss-import",
-                            "autoprefixer",
-                            "postcss-preset-env",
-                            [
-                                "@fullhuman/postcss-purgecss",
-                                process.env.NODE_ENV === "production"
-                                        ? {
-                                        content: ["./pages/**/*.js", "./components/**/*.js"],
-                                        whitelist: ["html", "body"],
-                                        defaultExtractor: (content) =>
-                                        content.match(/[\w-/:]+(?<!:)/g) || [],
-                                        }
-                                        : false,
-                            ],
+        module.exports = {
+                plugins: [
+                        "tailwindcss",
+                        "postcss-import",
+                        "autoprefixer",
+                        "postcss-preset-env",
+                        [
+                        "@fullhuman/postcss-purgecss",
+                        process.env.NODE_ENV === "production"
+                                ? {
+                                content: ["./pages/**/*.js", "./components/**/*.js"],
+                                whitelist: ["html", "body"],
+                                defaultExtractor: (content) =>
+                                content.match(/[\w-/:]+(?<!:)/g) || [],
+                                }
+                                : false,
                         ],
+                ],
+        }
 
-                    }
+7)  Create an assets directory with a css subdirectory and a styles.css file
 
-            ```
+        /* purgecss start ignore */
+        @tailwind base;
+        /* purgecss end ignore */
+        @tailwind components;
+        @tailwind utilities;
 
-7.  Create an assets directory with a css subdirectory and a styles.css file
+8)  Create an \_app.js page in the pages directory:
 
-        ```js
-                /* purgecss start ignore */
-                @tailwind base;
-                /* purgecss end ignore */
-                @tailwind components;
-                @tailwind utilities;
-        ```
+        import "../public/assets/css/styles.css"
 
-8.  Create an \_app.js page in the pages directory:
+        import { ContextProvider } from "../context"
+        import { Navbar } from "../components"
 
-        ```js
-                import "../public/assets/css/styles.css"
-
-                import { ContextProvider } from "../context"
-                import { Navbar } from "../components"
-
-                export default function MyApp({ Component, pageProps }) {
-                        return (
-                                <ContextProvider>
-                                        <Navbar />
-                                        <Component {...pageProps} />
-                                </ContextProvider>
-                        )
-                }
-
-        ```
+        export default function MyApp({ Component, pageProps }) {
+                return (
+                        <ContextProvider>
+                                <Navbar />
+                                <Component {...pageProps} />
+                        </ContextProvider>
+                )
+        }
 
 9.  Create a .eslintrc.json file in root:
 
-        ```js
-                {
-                        "parserOptions": {
-                                "ecmaVersion": 6,
-                                "sourceType": "module",
-                                "ecmaFeatures": {
-                                        "jsx": true
-                                }
-                        },
-                        "rules": {
-                                "react/react-in-jsx-scope": "off"
+        {
+                "parserOptions": {
+                        "ecmaVersion": 6,
+                        "sourceType": "module",
+                        "ecmaFeatures": {
+                                "jsx": true
                         }
+                },
+                "rules": {
+                        "react/react-in-jsx-scope": "off"
                 }
-
-        ```
+        }
 
 10. Deploying
 
