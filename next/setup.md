@@ -84,7 +84,9 @@
 10. Deploying
 
         1. Import project from github https://zeit.co/dashboard
-        2. Now everytime to master it will publish
+        2. Add custom domain from domain section
+        3. run 'now' in root of your project
+        4. Pushing to master branch should auto deploy
 
 11) Troubleshooting
 
