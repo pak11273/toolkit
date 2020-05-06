@@ -13,3 +13,10 @@
     * Make sure that linking is on for each property you want to see data from Google Ads
     * Click Link accounts
     * Done!
+
+## Setting up on NextJS
+
+    * Add tagmanager: https://stackoverflow.com/questions/45848142/how-to-set-up-google-analytics-through-google-tag-manager-for-next-js
+    * For layout:
+    * For _document: https://github.com/zeit/next.js/blob/canary/examples/with-google-analytics/pages/_document.js
+    * For _document and styled-components: https://stackoverflow.com/questions/60411351/how-to-use-google-analytics-with-next-js-app
