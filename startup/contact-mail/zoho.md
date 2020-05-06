@@ -11,3 +11,5 @@
 ## Create a new account on zoho using new gmail account
 
 - You will need a smart phone to get an access code for verification
+
+// TODO: redirect mail to owner and admin's email

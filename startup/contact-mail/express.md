@@ -76,3 +76,5 @@ app.post("/api/contact", (req, res) => {
 - https://nodemailer.com/smtp/oauth2/#oauth-3lo
 - https://www.mailgun.com/
 - https://sendgrid.com/
+
+- OAuth2 setup: https://spectrum.chat/next-js/general/next-8-now-2-nodemailer-using-gmail-and-serverless-lambdas~02aa0c96-7cba-4978-a758-f4cccb235e0b
