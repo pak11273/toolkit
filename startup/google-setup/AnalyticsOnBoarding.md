@@ -18,7 +18,7 @@
     * Click "Set up for free"
     * Use your website name for an account name (eg. example.com)
     * Leave all checkboxes checked and click "Next"
-    * Click Apps and Web
+    * Click Web
     * For property name use website name again
     * Fill out the rest of the dropdown menus according to your business details
     * Accept all terms
