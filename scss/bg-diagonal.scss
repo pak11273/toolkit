@@ -1,0 +1,22 @@
+// ref: https://stackoverflow.com/questions/14739162/two-tone-background-split-by-diagonal-line-using-css
+
+// 2 tones
+.diagonal-split-background {
+  background-color: #013a6b;
+  background-image: -webkit-linear-gradient(30deg, #013a6b 50%, #004e95 50%);
+}
+
+// with an image
+#container {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  background-image: url(http://www.webdesign.org/img_articles/14881/site-background-pattern-07.jpg);
+}
+
+#triangle-topleft {
+  width: 0;
+  height: 0;
+  border-top: 100px solid gray;
+  border-right: 100px solid transparent;
+}
